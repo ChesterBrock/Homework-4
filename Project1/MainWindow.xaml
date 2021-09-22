@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Project 1" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="outstandingBalanceTextBox"  HorizontalAlignment="Left" Height="26" Margin="69,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176"/>
+        <TextBox x:Name="monthlyPaymentTextBox"  HorizontalAlignment="Left" Height="23" Margin="551,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189"/>
+        <Label Content="Outstanding Balance" HorizontalAlignment="Left" Margin="69,10,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label Content="Monthly Payment " HorizontalAlignment="Left" Margin="551,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.588,-0.782" Height="26" Width="189"/>
+        <Button  x:Name="button"  Content="Submit" HorizontalAlignment="Left" Margin="250,176,0,0" VerticalAlignment="Top" Width="297" Height="61" Click="button_Click"/>
+
     </Grid>
 </Window>

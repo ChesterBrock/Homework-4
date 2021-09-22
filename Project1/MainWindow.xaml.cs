@@ -36,11 +36,43 @@ namespace Project1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    static class constants
+    {
+        public const double ANNUAL_INTEREST_RATE = 6.39; // creating a constant that will not change 
+    }
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+    public MainWindow()
+    {
+         InitializeComponent();
     }
+
+    private void button_Click(object sender, RoutedEventArgs e)
+    {
+            // reading in the textbox values 
+            double outstandingBalance = double.Parse(outstandingBalanceTextBox.Text);
+            double monthlyPayment = double.Parse(monthlyPaymentTextBox.Text);
+
+            // Convert the monthly interest rate 
+            double monthlyInterestRate = (constants.ANNUAL_INTEREST_RATE * outstandingBalance) / 12.00;
+            // Find the monthly interest amount 
+            double monthlyInterestAmount = monthlyInterestRate / 100.00;
+            // Find principal amount 
+            double principalAmount = monthlyPayment - monthlyInterestAmount;
+            // Find the balance after 
+            double newBalance = outstandingBalance - principalAmount;
+
+            // Displaying the results
+            MessageBox.Show("Starting Balance   :   " + outstandingBalance + "\n" +
+                            "Monthly Payment    :   " + monthlyPayment + "\n" +
+                            "Interest Amount    :   " + monthlyInterestAmount + "\n" +
+                            "Principal Amount   :   " + principalAmount + "\n" +
+                            "--------------------------------------------" + "\n" +
+                            "New Balance        :   " + newBalance );
+
+
+
+        }
+  }
 }
