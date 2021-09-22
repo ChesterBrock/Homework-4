@@ -27,6 +27,31 @@ namespace Project2
     {
         static void Main(string[] args)
         {
+            // Declaring the penny values
+            int penniesPerDollar = 100, penniesPerQuart = 25, penniesPerDime = 10, penniesPerNickel = 5, moneyAmount, returned ;
+
+            // asking user for the item price
+            Console.WriteLine("How much does this item cost? (From 5 cents to $1 in 5-cent increments");
+            moneyAmount = Int32.Parse(Console.ReadLine());
+
+            //find how much change is needed 
+            returned = penniesPerDollar - moneyAmount;
+            Console.WriteLine("The item cost " + moneyAmount + " cents and you paid with $1 \n Your Change is: " + returned + " cents ");
+
+            int quarters = returned / penniesPerQuart;
+            returned %= penniesPerQuart;
+
+            int dimes = returned / penniesPerDime;
+            returned %= penniesPerDime;
+
+            int nickels = returned / penniesPerNickel;
+
+            Console.WriteLine(" Quarters " + quarters);
+            Console.WriteLine(" Dimes " + dimes);
+            Console.WriteLine(" nickels " + nickels);
+
+            Console.ReadLine();
+
         }
     }
 }
